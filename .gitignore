@@ -1,0 +1,21 @@
+####################### .gitignore for AER_Übnung ############################
+
+## These are just guideline suggestions.                                    ##
+## Feel free to add more patterns, or remove some, if required.             ##
+
+## Gitignores help keeping GIT clean, stable, and usable.                   ##
+## It will e.g. exclude large binary files and redundant logs from the repo.##
+## Adding this file to a repo, will trigger a warning if a pattern matches. ##
+
+
+# Sometimes, binaries are reasonable
+# Typically, sources together with a build script or build commands is better
+*.ba
+*.bin
+*.bo
+*build/
+*.class
+*.o
+*.cxx
+*.so
+*.h
