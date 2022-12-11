@@ -2,7 +2,9 @@ package  ALUTb;
     import ALU :: *;
     module mkALUTb(Empty);
         HelloALU dut <- mkSimpleALU;
-        //it is not possible to run all of these statements in only one Clk cycle
+        /*
+         * conclusion: it is not possible to run all of these statements in only one Clk cycle
+         */
         /*rule check;
             dut.setupCalculation(Mul, 4, 5);
             $display ("result is %d.", dut.getResult());

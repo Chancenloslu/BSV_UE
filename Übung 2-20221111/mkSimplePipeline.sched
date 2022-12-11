@@ -1,0 +1,30 @@
+=== Generated schedule for mkSimplePipeline ===
+
+Method schedule
+---------------
+Method: calc_put
+Ready signal: fifo_in.i_notFull
+Conflict-free: setParam
+Sequenced after (restricted): calc_result
+Conflicts: calc_put
+ 
+Method: calc_result
+Ready signal: fifo_out.notEmpty && fifo_out.i_notEmpty
+Sequenced before (restricted): calc_put, setParam
+Conflicts: calc_result
+ 
+Method: setParam
+Ready signal: True
+Conflict-free: calc_put
+Sequenced before (restricted): setParam
+Sequenced after (restricted): calc_result
+ 
+Rule schedule
+-------------
+Rule: r1
+Predicate: fifo_in.i_notEmpty && fifo_out.i_notFull
+Blocking rules: (none)
+ 
+Logical execution order: calc_result, r1, calc_put, setParam
+
+================================================

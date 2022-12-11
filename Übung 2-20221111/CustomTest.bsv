@@ -28,6 +28,18 @@ package CustomTest;
             seq
                 setup(dut, a, b, c);
                 // TODO: extend statement
+                dut.calc.put(in);
+                
+                action
+                    let t <- dut.calc.result();
+                    if(t == expOut) begin
+                        $display("Test %d succeeded!");
+                    end
+                    else begin
+                        $display("Test %d faild. The expected value is %d, but got %h", pack(in)[31:0], pack(expOut)[31:0], pack(t)[31:0]);
+                    end
+                endaction
+                
             endseq
         };
 
